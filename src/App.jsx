@@ -1,12 +1,12 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Planner from './components/Planner';
-import Footer from './components/Footer';
+import React from 'react'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Planner from './components/Planner'
+import Footer from './components/Footer'
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-slate-900 antialiased">
       <Header />
       <main>
         <Hero />
@@ -14,7 +14,5 @@ function App() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
-
-export default App;

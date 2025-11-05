@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { Target, Server, Database, Shield, Search, Bell, Settings, Calendar } from 'lucide-react';
+import React, { useMemo, useState } from 'react'
+import { Target, Server, Shield, Search, Bell, Settings, Calendar } from 'lucide-react'
 
 const SectionTitle = ({ icon: Icon, title, id }) => (
   <div id={id} className="flex items-center gap-2 mb-4">
@@ -8,22 +8,22 @@ const SectionTitle = ({ icon: Icon, title, id }) => (
     </div>
     <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
   </div>
-);
+)
 
 const Field = ({ label, children }) => (
   <label className="block">
     <span className="text-sm font-medium text-slate-700">{label}</span>
     <div className="mt-1">{children}</div>
   </label>
-);
+)
 
 const Chip = ({ children }) => (
   <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs border border-slate-200">
     {children}
   </span>
-);
+)
 
-const Planner = () => {
+export default function Planner() {
   const [form, setForm] = useState({
     nome: '',
     mission: '',
@@ -48,9 +48,9 @@ const Planner = () => {
     utenti: '10.000 utenti attivi/giorno',
     monitoring: 'Sentry + Prometheus',
     timeline: 'MVP in 6 settimane',
-  });
+  })
 
-  const handleChange = (key, value) => setForm(prev => ({ ...prev, [key]: value }));
+  const handleChange = (key, value) => setForm(prev => ({ ...prev, [key]: value }))
 
   const summary = useMemo(() => ({
     visione: {
@@ -68,7 +68,7 @@ const Planner = () => {
     requisiti: {
       funzionali: [
         form.auth && 'Autenticazione con JWT',
-        form.gestione && 'CRUD sull\'oggetto principale',
+        form.gestione && "CRUD sull'oggetto principale",
         `Integrazione esterna: ${form.integrazione}`,
         form.ricerca && 'Ricerca e filtri avanzati',
         `Notifiche via ${form.notifiche}`,
@@ -81,7 +81,7 @@ const Planner = () => {
       ],
       timeline: form.timeline,
     }
-  }), [form]);
+  }), [form])
 
   return (
     <section id="planner" className="py-12">
@@ -389,7 +389,5 @@ const Planner = () => {
         </aside>
       </div>
     </section>
-  );
-};
-
-export default Planner;
+  )
+}

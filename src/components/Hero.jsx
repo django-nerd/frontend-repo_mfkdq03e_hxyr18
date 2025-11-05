@@ -1,10 +1,10 @@
-import React from 'react';
-import { Target, Users } from 'lucide-react';
+import React from 'react'
+import { Target, Users } from 'lucide-react'
 
-const Hero = () => {
+export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-fuchsia-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-fuchsia-50 pointer-events-none" />
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
@@ -40,7 +40,5 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-export default Hero;
+  )
+}
